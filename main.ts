@@ -1,20 +1,17 @@
 basic.forever(function () {
-	
-})
-basic.forever(function () {
-    basic.showLeds(`
-        # # # # #
-        # # # # #
-        # # # # #
-        # # # # #
-        # # # # #
-        `)
-    basic.pause(500)
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
+    if (input.lightLevel() > 100) {
+        while (true) {
+            basic.showIcon(IconNames.Heart)
+            basic.showLeds(`
+                . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                `)
+            basic.showIcon(IconNames.Heart)
+        }
+    } else {
+        basic.showIcon(IconNames.No)
+    }
 })
